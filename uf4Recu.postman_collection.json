@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "3bf1cb87-56a8-4436-99fc-8c99d15063a6",
+		"name": "uf4Recu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18626252"
+	},
+	"item": [
+		{
+			"name": "Get All Jugadors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/jugadors/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jugadors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Partides",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/partides/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"partides",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one jugador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/jugadors/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jugadors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one partida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/partides/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"partides",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get jugadors/[ID]/partides",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/jugadors/2/partides",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jugadors",
+						"2",
+						"partides"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete jugador",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/jugadors/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jugadors",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post jugador",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"6\",\r\n    \"username\": \"fal\",\r\n    \"fullname\": \"fal laf\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/jugadors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jugadors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post partida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"6\",\r\n    \"username\": \"fal\",\r\n    \"fullname\": \"fal laf\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/jugadors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jugadors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update jugador",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"username\": \"canvi\",\r\n    \"fullname\": \"update\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/jugadors/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jugadors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update partida",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"white_player\": \"1\",\r\n    \"black_player\": \"2\",\r\n    \"winner\": \"1\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/jugadors/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jugadors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
