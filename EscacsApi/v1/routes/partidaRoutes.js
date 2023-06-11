@@ -6,7 +6,7 @@ router
     .get("/", partidaController.getAllPartides)
     .get("/:id", partidaController.getPartidaById)
     .post("/", partidaController.createPartida)
-    .put("/:id", partidaController.updatePartida)
+    .patch("/:id", partidaController.updatePartida)
     .delete("/:id", partidaController.deletePartida);
 
 module.exports = router;

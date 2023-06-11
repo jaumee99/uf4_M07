@@ -1,41 +1,51 @@
 const { v4: uuid } = require("uuid");
 const Jugador = require("../database/jugador");
 
-const getAllJugadors = ( filterParams ) => {
-    try { 
+const getAllJugadors = (filterParams) => {
+    return new Promise((resolve, reject) => {
+      try {
         const allJugadors = Jugador.getAllJugadors(filterParams);
-        return allJugadors;
-    } catch (error) {
-        throw error;
-    }
-};
+        resolve(allJugadors);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  };
+  
 
 const getJugadorById = (id) => {
+    return new Promise((resolve, reject) => {
     try {
         const jugador = Jugador.getJugadorById(id);
-        return jugador;
+        resolve(jugador);
     } catch (error) {
-        throw error;
-    }
+        reject(error);
+        }
+    });
 }
 
-const createJugador = (jugador) => {
+const createJugador = (newJugador) => {
+    const jugadorToCreate = {
+        ...newJugador,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    }
     try {
-        const jugadorCreated = Jugador.createJugador(jugador);
+        const jugadorCreated = Jugador.createJugador(jugadorToCreate);
         return jugadorCreated;
     } catch (error) {
         throw error;
     }
 }
 
-const updateJugador = (id, jugador) => {
+const updateJugador = (id, updatedFields) => {
     try {
-        const jugadorUpdated = Jugador.updateJugador(id, jugador);
-        return jugadorUpdated;
+      const jugadorUpdated = Jugador.updateJugador(id, updatedFields);
+      return jugadorUpdated;
     } catch (error) {
-        throw error;
+      throw error;
     }
-}
+  };
 
 const deleteJugador = (id) => {
     try {
@@ -47,39 +57,14 @@ const deleteJugador = (id) => {
 }
 
 const getPartidesByJugadorId = (id) => {
+    return new Promise((resolve, reject) => {
     try {
         const partides = Jugador.getPartidesByJugadorId(id);
-        return partides;
+        resolve(partides);
     } catch (error) {
-        throw error;
+        reject(error);
     }
-}
-
-const getPartidesByJugadorIdAndPosicio = (id, posicio) => {
-    try {
-        const partides = Jugador.getPartidesByJugadorIdAndPosicio(id, posicio);
-        return partides;
-    } catch (error) {
-        throw error;
-    }
-}
-
-const getPartidesByJugadorIdAndData = (id, data) => {
-    try {
-        const partides = Jugador.getPartidesByJugadorIdAndData(id, data);
-        return partides;
-    } catch (error) {
-        throw error;
-    }
-}
-
-const getPartidesByJugadorIdAndPosicioAndData = (id, posicio, data) => {
-    try {
-        const partides = Jugador.getPartidesByJugadorIdAndPosicioAndData(id, posicio, data);
-        return partides;
-    } catch (error) {   
-        throw error;
-    }
+    });
 }
 
 module.exports = {
@@ -88,8 +73,5 @@ module.exports = {
     createJugador,
     updateJugador,
     deleteJugador,
-    getPartidesByJugadorId,
-    getPartidesByJugadorIdAndPosicio,
-    getPartidesByJugadorIdAndData,
-    getPartidesByJugadorIdAndPosicioAndData
+    getPartidesByJugadorId
 }
